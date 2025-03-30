@@ -7,7 +7,6 @@ from skimage import measure
 import imutils
 import os
 
-# Define the segment_chars function here
 def segment_chars(plate, threshold_value=400):
     gray = cv2.cvtColor(plate, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, threshold_value, 255, cv2.THRESH_BINARY)
@@ -180,7 +179,7 @@ class OCR:
 
 if __name__ == "__main__":
     findPlate = PlateFinder(minPlateArea=4100, maxPlateArea=15000)
-    model = OCR(modelFile=r"D:\Downloads\binary_128_0.50_ver3.pb", labelFile=r"D:\Downloads\binary_128_0.50_labels_ver2.txt")
+    model = OCR(modelFile=r"D:\Downloads\binary_128_0.50_ver3.pb", labelFile=r"D:\Downloads\binary_128_0.50_labels_ver2.txt") #replace with correct path according to your system
 
     cap = cv2.VideoCapture(r"D:\Downloads\output_video_car.mov")
 
